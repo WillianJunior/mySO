@@ -1,4 +1,0 @@
-mySO
-====
-
-just some testing
