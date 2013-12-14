@@ -16,3 +16,7 @@
 *.exe
 *.out
 *.app
+
+# Compiled assembly
+*.bin
+*.flp

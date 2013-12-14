@@ -1,0 +1,1 @@
+qemu-system-i386 -fda boot.flp -m 32

@@ -1,0 +1,1 @@
+qemu-system-i386 -fda fd0 -m 32
