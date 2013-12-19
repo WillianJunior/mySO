@@ -9,7 +9,7 @@ sprint:
 	
 	movzx bx, byte [limit]  ; get the maximum limit
 	cmp bl, byte [lines]	; check if the line limit was reached
-	jge xposload
+	jg xposload
 	
 	add byte [tab], 5     ; i limit was reached add a tab
 	mov byte [lines], 0   ; reset the line counter
@@ -21,8 +21,8 @@ xposload:
 	add byte [lines], 1  ;increment the lines counter
 	ret
 
-cprint:   
-	mov ah, 0x0F   ; attrib = white on black
+cprint:
+	mov ah, 0x0F   ; attrib = white on black ----------------> here comes the text colour
 	mov cx, ax    ; save char/attribute
 	movzx ax, byte [ypos]
 	mov dx, 160   ; 2 bytes (char/attrib)

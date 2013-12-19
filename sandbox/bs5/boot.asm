@@ -2,16 +2,17 @@
 ; nasmw boot.asm -f bin -o boot.bin
 ; partcopy boot.bin 0 200 -f0
  
-[ORG 0x7c00]      ; add to offsets
    jmp start
  
    %include "print.inc"
  
-start:   xor ax, ax   ; make it zero
+start:   
+   mov ax, 0x07c0
    mov ds, ax   ; DS=0
    mov ss, ax   ; stack starts at 0
-   mov sp, 0x9c00   ; 200h past code start
- 
+   add ax, 200
+   mov sp, ax   ; 200h past code start    
+   
    mov ax, 0xb800   ; text video memory
    mov es, ax
  
